@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Randonnee{% endblock %}
+
+{% block body %}
+    <h1>Randonnee</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ randonnee.id }}</td>
+            </tr>
+            <tr>
+                <th>Createur</th>
+                <td>{{ randonnee.Createur }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ randonnee.Titre }}</td>
+            </tr>
+            <tr>
+                <th>Duree</th>
+                <td>{{ randonnee.Duree }}</td>
+            </tr>
+            <tr>
+                <th>Distance</th>
+                <td>{{ randonnee.Distance }}</td>
+            </tr>
+            <tr>
+                <th>Denivele</th>
+                <td>{{ randonnee.Denivele }}</td>
+            </tr>
+            <tr>
+                <th>PointHaut</th>
+                <td>{{ randonnee.PointHaut }}</td>
+            </tr>
+            <tr>
+                <th>PointBas</th>
+                <td>{{ randonnee.PointBas }}</td>
+            </tr>
+            <tr>
+                <th>Difficulte</th>
+                <td>{{ randonnee.Difficulte }}</td>
+            </tr>
+            <tr>
+                <th>RetourDepart</th>
+                <td>{{ randonnee.RetourDepart ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ randonnee.Type }}</td>
+            </tr>
+            <tr>
+                <th>Region</th>
+                <td>{{ randonnee.Region }}</td>
+            </tr>
+            <tr>
+                <th>Commune</th>
+                <td>{{ randonnee.Commune }}</td>
+            </tr>
+            <tr>
+                <th>Depart</th>
+                <td>{{ randonnee.Depart }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ randonnee.Description }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>{{ randonnee.Photo }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('randonnee_index') }}">back to list</a>
+
+    <a href="{{ path('randonnee_edit', {'id': randonnee.id}) }}">edit</a>
+
+    {{ include('randonnee/_delete_form.html.twig') }}
+{% endblock %}
